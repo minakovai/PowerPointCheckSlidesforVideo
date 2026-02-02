@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PowerPoint Check Slides for Video</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <div>
+        <h1>Проверка перекрытия слайдов видео-окном</h1>
+        <p>
+          Инструмент анализирует .pptx и подсвечивает текстовые блоки,
+          попадающие в область видео спикера (picture-in-picture).
+        </p>
+      </div>
+      <div class="badge">PHP 8 + PhpPresentation</div>
+    </header>
+
+    <section class="card">
+      <h2>Загрузка презентации</h2>
+      <p class="note">
+        GitHub Pages не поддерживает загрузку файлов на сервер. Чтобы выполнить анализ,
+        запустите локально: <code>composer install</code> и <code>php -S 0.0.0.0:8000 -t public</code>.
+      </p>
+      <form class="upload" onsubmit="return false;">
+        <label class="file">
+          <span>Выберите .pptx файл</span>
+          <input type="file" name="presentation" accept=".pptx" disabled>
+        </label>
+        <button type="button" class="primary" disabled>Проанализировать</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Что делает анализатор</h2>
+      <ul>
+        <li>Вычисляет размеры каждого слайда.</li>
+        <li>Извлекает координаты и размеры текстовых блоков.</li>
+        <li>Проверяет пересечения с зоной видео-окна.</li>
+        <li>Готовит HTML-отчёт и JSON для API.</li>
+      </ul>
+    </section>
+
+    <footer class="footer">
+      <span>Исходники доступны в репозитории PowerPointCheckSlidesforVideo.</span>
+    </footer>
+  </main>
+</body>
+</html>
